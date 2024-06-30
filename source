@@ -1,0 +1,338 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TIMESTOP = Instance.new("TextButton")
+local TSBYPASS = Instance.new("TextButton")
+local STWH = Instance.new("TextButton")
+local BLOCKGLITCH = Instance.new("TextButton")
+local HGSCRIPT = Instance.new("TextButton")
+local D4C = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderSizePixel = 3
+Frame.Position = UDim2.new(0.0334054455, 0, 0.469971716, 0)
+Frame.Size = UDim2.new(0, 205, 0, 165)
+
+TIMESTOP.Name = "TIMESTOP"
+TIMESTOP.Parent = Frame
+TIMESTOP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TIMESTOP.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TIMESTOP.BorderSizePixel = 2
+TIMESTOP.Position = UDim2.new(0.0418922976, 0, 0.275851339, 0)
+TIMESTOP.Size = UDim2.new(0, 48, 0, 34)
+TIMESTOP.Font = Enum.Font.Unknown
+TIMESTOP.Text = "TS"
+TIMESTOP.TextColor3 = Color3.fromRGB(255, 255, 255)
+TIMESTOP.TextSize = 14.000
+
+TSBYPASS.Name = "TS BYPASS"
+TSBYPASS.Parent = Frame
+TSBYPASS.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TSBYPASS.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TSBYPASS.BorderSizePixel = 2
+TSBYPASS.Position = UDim2.new(0.372894347, 0, 0.275851339, 0)
+TSBYPASS.Size = UDim2.new(0, 48, 0, 34)
+TSBYPASS.Font = Enum.Font.Unknown
+TSBYPASS.Text = "TSB"
+TSBYPASS.TextColor3 = Color3.fromRGB(255, 255, 255)
+TSBYPASS.TextSize = 14.000
+
+STWH.Name = "STW-H"
+STWH.Parent = Frame
+STWH.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+STWH.BorderColor3 = Color3.fromRGB(255, 255, 255)
+STWH.BorderSizePixel = 2
+STWH.Position = UDim2.new(0.722609937, 0, 0.275851339, 0)
+STWH.Size = UDim2.new(0, 48, 0, 34)
+STWH.Font = Enum.Font.Unknown
+STWH.Text = "STWH"
+STWH.TextColor3 = Color3.fromRGB(255, 255, 255)
+STWH.TextSize = 14.000
+
+BLOCKGLITCH.Name = "BLOCK GLITCH"
+BLOCKGLITCH.Parent = Frame
+BLOCKGLITCH.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+BLOCKGLITCH.BorderColor3 = Color3.fromRGB(255, 255, 255)
+BLOCKGLITCH.BorderSizePixel = 2
+BLOCKGLITCH.Position = UDim2.new(0.0396831222, 0, 0.609184682, 0)
+BLOCKGLITCH.Size = UDim2.new(0, 48, 0, 34)
+BLOCKGLITCH.Font = Enum.Font.Unknown
+BLOCKGLITCH.Text = "BLOCK"
+BLOCKGLITCH.TextColor3 = Color3.fromRGB(255, 255, 255)
+BLOCKGLITCH.TextSize = 14.000
+
+HGSCRIPT.Name = "HG SCRIPT"
+HGSCRIPT.Parent = Frame
+HGSCRIPT.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+HGSCRIPT.BorderColor3 = Color3.fromRGB(255, 255, 255)
+HGSCRIPT.BorderSizePixel = 2
+HGSCRIPT.Position = UDim2.new(0.371390432, 0, 0.609184682, 0)
+HGSCRIPT.Size = UDim2.new(0, 48, 0, 34)
+HGSCRIPT.Font = Enum.Font.Unknown
+HGSCRIPT.Text = "HG"
+HGSCRIPT.TextColor3 = Color3.fromRGB(255, 255, 255)
+HGSCRIPT.TextSize = 14.000
+
+D4C.Name = "D4C"
+D4C.Parent = Frame
+D4C.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+D4C.BorderColor3 = Color3.fromRGB(255, 255, 255)
+D4C.BorderSizePixel = 2
+D4C.Position = UDim2.new(0.722609937, 0, 0.609184682, 0)
+D4C.Size = UDim2.new(0, 48, 0, 34)
+D4C.Font = Enum.Font.Unknown
+D4C.Text = "D4C"
+D4C.TextColor3 = Color3.fromRGB(255, 255, 255)
+D4C.TextSize = 14.000
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BorderSizePixel = 2
+TextLabel.Size = UDim2.new(0, 205, 0, 24)
+TextLabel.Font = Enum.Font.Unknown
+TextLabel.Text = "SA-FUCKER MOBILE"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+-- Scripts:
+
+local function ZMSXTPM_fake_script() -- TIMESTOP.Script 
+	local script = Instance.new('Script', TIMESTOP)
+
+	local textButton = script.Parent -- Assuming the script is a child of the TextButton
+	
+	textButton.MouseButton1Click:Connect(function()
+		local args = {
+			[1] = 15,
+			[2] = "dioova"
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("Main"):WaitForChild("Timestop"):FireServer(unpack(args))
+	end)
+	
+end
+coroutine.wrap(ZMSXTPM_fake_script)()
+local function DOIVA_fake_script() -- TSBYPASS.Script 
+	local script = Instance.new('Script', TSBYPASS)
+
+	local Players = game:GetService("Players")
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local localPlayer = Players.LocalPlayer
+	
+	local function toggleAnchoring()
+		if localPlayer then
+			local character = localPlayer.Character
+			if character then
+				local partsToToggle = {}
+				local function collectParts(parent)
+					for _, child in ipairs(parent:GetChildren()) do
+						if child:IsA("BasePart") then
+							table.insert(partsToToggle, child)
+						end
+						collectParts(child)
+					end
+				end
+				collectParts(character)
+	
+				local function anchorParts(parts, anchor)
+					for _, part in ipairs(parts) do
+						local args = {
+							[1] = part,
+							[2] = anchor
+						}
+						ReplicatedStorage:WaitForChild("Anchor"):FireServer(unpack(args))
+					end
+				end
+	
+				anchorParts(partsToToggle, false)
+	
+				local stand = character:FindFirstChild("Stand")
+				if stand then
+					local partsToAnchor = {}
+					collectParts(stand)
+					anchorParts(partsToAnchor, false)
+				else
+					warn("Stand object not found in character")
+				end
+			else
+				warn("Character not found for LocalPlayer")
+			end
+		else
+			warn("LocalPlayer not found")
+		end
+	end
+	
+	-- Replace 'TextButton' with the actual name of your TextButton object
+	local button = script.Parent:WaitForChild("TextButton")
+	button.MouseButton1Click:Connect(toggleAnchoring)
+	
+end
+coroutine.wrap(DOIVA_fake_script)()
+local function WLCQL_fake_script() -- STWH.Script 
+	local script = Instance.new('Script', STWH)
+
+	local textButton = script.Parent -- Assuming the script is a child of the TextButton
+	
+	textButton.MouseButton1Click:Connect(function()
+		while true do
+			local args = {
+				[1] = "Alternate",
+				[2] = "STWRTZ",
+				[3] = true
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Main"):WaitForChild("Input"):FireServer(unpack(args))
+			wait(1)
+		end
+	end)
+	
+end
+coroutine.wrap(WLCQL_fake_script)()
+local function FGOI_fake_script() -- Frame.DragScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	--Not made by me, check out this video: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
+	--Put this inside of your Frame and configure the speed if you would like.
+	--Enjoy! Credits go to: https://www.youtube.com/watch?v=z25nyNBG7Js&t=22s
+	
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(FGOI_fake_script)()
+local function MUMZ_fake_script() -- BLOCKGLITCH.Script 
+	local script = Instance.new('Script', BLOCKGLITCH)
+
+	-- Create a ScreenGui
+	local screenGui = Instance.new("ScreenGui")
+	screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	
+	-- Create a TextButton
+	local textButton = Instance.new("TextButton")
+	textButton.Size = UDim2.new(0, 200, 0, 50) -- Adjust the size (200x50) as needed
+	textButton.Position = UDim2.new(0.5, -100, 0.5, -25) -- Centered on the screen
+	textButton.Text = "Click Me"
+	textButton.Parent = screenGui
+	
+	-- Define the arguments to send
+	local args = {
+		[1] = "Alternate",
+		[2] = "Block"
+	}
+	
+	-- Connect the button click event to the server event
+	textButton.MouseButton1Click:Connect(function()
+		game:GetService("ReplicatedStorage"):WaitForChild("Main"):WaitForChild("Input"):FireServer(unpack(args))
+	end)
+	
+end
+coroutine.wrap(MUMZ_fake_script)()
+local function UMEKMU_fake_script() -- HGSCRIPT.Script 
+	local script = Instance.new('Script', HGSCRIPT)
+
+	-- Create a ScreenGui
+	local screenGui = Instance.new("ScreenGui")
+	screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	
+	-- Create a TextButton
+	local textButton = Instance.new("TextButton")
+	textButton.Size = UDim2.new(0, 200, 0, 50) -- Adjust the size (200x50) as needed
+	textButton.Position = UDim2.new(0.5, -100, 0.5, -25) -- Centered on the screen
+	textButton.Text = "Click Me"
+	textButton.Parent = screenGui
+	
+	-- Function to send the server event
+	local function sendServerEvent()
+		wait(1)  -- Wait for 1 second
+		game:GetService("UserInputService").InputBegan:Connect(function(ip, gpe)
+			if not gpe then
+				if ip.KeyCode == Enum.KeyCode.LeftControl then
+					for i = 1, 50 do
+						local args = {
+							[1] = "Alternate",
+							[2] = "EmeraldProjectile2",
+							[3] = false,
+							[4] = game.Players.LocalPlayer:GetMouse().Hit
+						}
+						game:GetService("ReplicatedStorage"):WaitForChild("Main"):WaitForChild("Input"):FireServer(unpack(args))
+					end
+				end
+			end
+		end)
+	end
+	
+	-- Connect the button click event to the function
+	textButton.MouseButton1Click:Connect(sendServerEvent)
+	
+end
+coroutine.wrap(UMEKMU_fake_script)()
+local function QYAY_fake_script() -- D4C.Script 
+	local script = Instance.new('Script', D4C)
+
+	-- Create a ScreenGui
+	local screenGui = Instance.new("ScreenGui")
+	screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	
+	-- Create a TextButton
+	local textButton = Instance.new("TextButton")
+	textButton.Size = UDim2.new(0, 200, 0, 50) -- Adjust the size (200x50) as needed
+	textButton.Position = UDim2.new(0.5, -100, 0.5, -25) -- Centered on the screen
+	textButton.Text = "Click Me"
+	textButton.Parent = screenGui
+	
+	-- Define the arguments to send
+	local args = {
+		[1] = "Alternate",
+		[2] = "Clone"
+	}
+	
+	-- Connect the button click event to the server event
+	textButton.MouseButton1Click:Connect(function()
+		game:GetService("ReplicatedStorage"):WaitForChild("Main"):WaitForChild("Input"):FireServer(unpack(args))
+	end)
+	
+end
+coroutine.wrap(QYAY_fake_script)()
